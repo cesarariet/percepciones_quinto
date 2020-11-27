@@ -1,0 +1,60 @@
+mixin articulo(curso,grupo,titulo,integrantes,tienePoster)
+	- var poster = `${curso}/grupo-${grupo}/poster.jpg`
+	- var informe = `${curso}/grupo-${grupo}/informe.pdf`
+	article
+		.informacion
+			h3.titulo= titulo
+			h4.integrantes: small= integrantes
+			if tienePoster != 'no'
+				img(class="poster",src=poster, alt=`poster científico`)
+			p.informe
+				a(href=informe) Artículo Científico
+			if tienePoster != 'no'
+				p.poster
+					a(href=poster) Poster Científico
+
+<!DOCTYPE html>
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Sentidos que perciben y un cerebro que puede ser engañado	
+		link(rel="stylesheet", href="style.css")
+	body
+
+		.presentacion
+			.texto
+				h1 Sentidos que perciben y un cerebro que puede ser engañado			
+				h2 Colegio San José de Marcos Paz
+				p Los alumnos/as de 4to y 5to año del Colegio San José de Marcos Paz nos invitan a "desconfiar" de nuestro cerebro.
+				p Mediante distintos informes* intentarán dar respuesta a ilusiones ópticas y auditivas, a la percepción del tiempo. También se interpelan sobre ¿qué es el ruido blanco y para qué nos ayuda? y ¿qué es la sinestesia?.
+				p: small * Trabajos en proceso de corrección.
+			figure
+				img(src="escudo.png", alt="")
+		
+
+		.trabajos
+			+articulo('5a',1,'Los ciclos del sueño y el ruido blanco','Blanco, V; Gimenez, J; Montiel, L; Scalia, J; Crespe, J; Narvaez, M')
+			+articulo('5a',2,'Neurociencia y aprendizaje','Campanario, J; Dualde, S; Friera, J; Gerez, M; Segovia, D; Velazquez, C')
+			+articulo('5a',3,'Neurociencia y el consumo de drogas','Romero, J; Carlsen, V; Galucci, C')
+			+articulo('5a',4,'La sinestesia','Montenegro, M')
+			+articulo('5a',5,'Optogenética: Controlar el cerebro con luz','Boch, L; Paz, L')
+
+			+articulo('5b',1,'Ilusión de Hering','Aragunde, L; Costancio, F; Jaca, M; Mesa, L')
+			+articulo('5b',2,'Pareta, T; Prida, M; Raffinetti, L; Raffinetti, L; Schiaffino, S')
+			+articulo('5b',3,"El calculo numérico en la ayuda de prevención de Alzheimer",'Bendini, L; Goyeneche, V; Maiolino, V; Telechea, P; Serra, R, López, J')
+			+articulo('5b',4,'Sistema Propioceptico','Collado, J; Cabrera, I; Degreef, M; Garceron, S; Montojo, M')
+			+articulo('5b',5,'Neurociencia y el deporte','Antunes, J; Colombo, F','no')
+			+articulo('5b',6,'La sinestecia', 'Aguirre, A; Perez, J; Masino, M, Guarracino, E')
+			+articulo('5b',7,'Holofonía','Salaberry, F; Torga, JJ, Sierra, M')
+
+
+
+
+
+
+
+
+
+
+
